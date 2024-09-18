@@ -6,8 +6,6 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 
 import org.bukkit.Bukkit;
 
-import me.tam.TPSDiscord.utils.TPSutils;
-
 
 public class TPSCommand extends ListenerAdapter {
 
@@ -17,7 +15,7 @@ public class TPSCommand extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         if (event.getName().equals("tps")) {
-            // make sure the bot can respond and also it will say "thinking" while it's fetching
+            // make sure the bot can respond, also it will say "thinking" while it's fetching
             event.deferReply().queue();
             // Fetch the TPS from the server
             double[] currentTPS = Bukkit.getServer().getTPS();
