@@ -2,4 +2,4 @@ name: TPSDiscord
 version: 1.0-SNAPSHOT
 main: me.tam.TPSDiscord.TPSDiscord
 description: A plugin to notify Discord about Minecraft server TPS.
-api-version: 1.20.1
+api-version: 1.21.1

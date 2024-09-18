@@ -11,7 +11,7 @@ import me.tam.TPSDiscord.Command.TPSCommand;
 
 public final class TPSDiscord extends JavaPlugin {
 
-    private static final double TPS_THRESHOLD = 19;
+    private static final double TPS_THRESHOLD = 17;
     private String botToken;
     private String channelId;
     private JDA jda;
@@ -56,7 +56,6 @@ public final class TPSDiscord extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("TPSDiscord plugin has stopped!");
-        jda.getTextChannelById(channelId).sendMessage("TPSDiscord has stopped!").queue();
         jda.shutdown();
     }
 }
