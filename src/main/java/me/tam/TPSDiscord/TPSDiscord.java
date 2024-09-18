@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 import me.tam.TPSDiscord.utils.TPSutils;
+import me.tam.TPSDiscord.Command.TPSCommand;
 
 
 public final class TPSDiscord extends JavaPlugin {
@@ -14,7 +15,7 @@ public final class TPSDiscord extends JavaPlugin {
     private String botToken;
     private String channelId;
     private JDA jda;
-    private TPSutils TPSutils = new TPSutils();
+    final private TPSutils TPSutils = new TPSutils();
     private boolean isTPSWarningSent = false;
 
     @Override
@@ -29,14 +30,12 @@ public final class TPSDiscord extends JavaPlugin {
         getLogger().info("TPSDiscord plugin has started!");
 
         try {
-            // create a new JDA instance
             jda = JDABuilder.createDefault(botToken)
+                    .addEventListeners(new TPSCommand())
                     .build();
-            // block until JDA is ready
             jda.awaitReady();
-            // send message to discord if connected
-            jda.getTextChannelById(channelId).sendMessage("TPSDiscord has started!").queue();
         } catch (Exception e) {
+            getLogger().severe("Error during bot initialization: " + e.getMessage());
             e.printStackTrace();
         }
 
