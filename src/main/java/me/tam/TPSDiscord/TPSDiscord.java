@@ -1,12 +1,14 @@
 package me.tam.TPSDiscord;
 
+import me.tam.TPSDiscord.utils.CommandHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 import me.tam.TPSDiscord.utils.TPSutils;
-import me.tam.TPSDiscord.Command.TPSCommand;
+
+
 
 
 public final class TPSDiscord extends JavaPlugin {
@@ -29,10 +31,13 @@ public final class TPSDiscord extends JavaPlugin {
         // Plugin startup logic
         getLogger().info("TPSDiscord plugin has started!");
 
+
         try {
+            CommandHandler commandHandler = new CommandHandler();
             jda = JDABuilder.createDefault(botToken)
-                    .addEventListeners(new TPSCommand())
+                    .addEventListeners(commandHandler)
                     .build();
+            commandHandler.registerCommands(jda);
             jda.awaitReady();
         } catch (Exception e) {
             getLogger().severe("Error during bot initialization: " + e.getMessage());
