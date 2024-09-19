@@ -24,8 +24,8 @@ public class CommandHandler extends ListenerAdapter {
 
         commands.add(Commands.slash("tps", "Get the TPS of the server")
                 .addOption(OptionType.STRING, "tps", "Get the TPS of the server", false));
-        commands.add(Commands.slash("set-image", "Set the image of the server")
-                .addOption(OptionType.ATTACHMENT, "image", "Set the image of the server", true));
+        commands.add(Commands.slash("set-image", "Set the profile picture of the bot")
+                .addOption(OptionType.ATTACHMENT, "image", "Set the profile picture of the bot", true));
 
         jda.updateCommands().addCommands(commands).queue();
     }
