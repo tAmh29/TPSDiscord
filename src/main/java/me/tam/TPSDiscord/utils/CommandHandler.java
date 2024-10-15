@@ -42,7 +42,7 @@ public class CommandHandler extends ListenerAdapter {
                 .addOption(OptionType.ATTACHMENT, "image", "Set the profile picture of the bot", true));
         commands.add(Commands.slash("mute", "Mute the join message"));
         commands.add(Commands.slash("setstatus", "Set the bot's status")
-                .addOption(OptionType.STRING, "type", "The activity type (playing, streaming, listening, watching, competing, custom)", true)
+                .addOption(OptionType.STRING, "type", "The activity type (playing, streaming, listening, watching, competing)", true)
                 .addOption(OptionType.STRING, "text", "The status text", true)
                 .addOption(OptionType.STRING, "url", "The streaming URL (only for streaming type)", false));
         commands.add(Commands.slash("inv", "Check a player's Minecraft inventory")
