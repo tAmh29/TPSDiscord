@@ -70,7 +70,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
-                    <outputDirectory>C:\Users\Tam\Desktop\new\plugins</outputDirectory>
+                    <outputDirectory>Your Output Directory</outputDirectory>
 
                 </configuration>
             </plugin>
