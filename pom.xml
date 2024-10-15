@@ -89,6 +89,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>me.nullicorn</groupId>
+            <artifactId>Nedit</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.21.1-R0.1-SNAPSHOT</version>
