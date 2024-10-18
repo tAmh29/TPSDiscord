@@ -4,3 +4,4 @@
 
 bot-token : "YOUR_BOT_TOKEN"
 channel-id : "YOUR_DISCORD_CHANNEL_ID"
+guild-id : "YOUR_DISCORD_GUILD_ID"
